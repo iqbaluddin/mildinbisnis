@@ -3,11 +3,9 @@ import HomePage from "./pages/HomePage";
 
 function App() {
   return (
-    <HashRouter>
-      <Routes>
-        <Route path="/d" element={<HomePage />} />
-      </Routes>
-    </HashRouter>
+    <Routes>
+      <Route path="/d" element={<HomePage />} />
+    </Routes>
   );
 }
 
