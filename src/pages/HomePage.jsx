@@ -3,6 +3,9 @@ import Navbar from "../components/Layout/Navbar";
 import step from "../data/step";
 import pulsa from "../data/pulsa";
 import { useNavigate } from "react-router-dom";
+import Product from "../components/Layout/Product";
+import voucherGame from "../data/voucherGame";
+import eWallet from "../data/ewallet";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -14,8 +17,8 @@ const HomePage = () => {
     <>
       {/* Navbar */}
       <Navbar />
-      <div className="flex justify-center">
-        <div className="lg:max-w-7xl md:w-full lg:mx-20 md:mx-10 mx-5 space-y-8">
+      <div className="flex justify-center lg:mb-20 mb-10 ">
+        <div className="lg:max-w-7xl md:w-full lg:mx-20 md:mx-10 mx-5 lg:space-y-12 space-y-8">
           {/* Step */}
           <div className="w-full space-y-3.5">
             <h1 className="text-[20px] font-semibold">Step Pembelian</h1>
@@ -23,7 +26,7 @@ const HomePage = () => {
               {step.map(($data, $key) => {
                 return (
                   <div
-                    className="lg:w-67.75 lg:h-28 w-full min-h-20 bg-white rounded-lg shadow-[0_2px_4px_0_rgb(0,0,0,0.25)] border border-Gray/50"
+                    className="lg:w-64 lg:h-28 w-full min-h-20 bg-white rounded-lg shadow-[0_2px_4px_0_rgb(0,0,0,0.25)] border border-Gray/50"
                     key={$key}
                   >
                     <div className="flex items-center p-3 space-x-3">
@@ -55,33 +58,32 @@ const HomePage = () => {
           </div>
 
           {/* Produk Pulsa */}
-          <div className="w-full space-y-3.5">
-            <h1 className="text-[20px] font-semibold">Pulsa</h1>
-            <div className="flex flex-wrap justify-start gap-4">
-              {pulsa.map(($data, $key) => {
-                return (
-                  <div
-                    onClick={() => handleNavigate($data.slug)}
-                    key={$key}
-                    className="relative md:w-67 md:min-h-16 md:max-h-16 w-40 flex justify-end"
-                  >
-                    <div className="absolute left-0 top-1/2 -translate-y-1/2 md:w-12 md:h-12 w-10 rounded-full overflow-hidden shadow-[6px_0_6px_0_rgba(0,0,0,0.25)]">
-                      <img
-                        className="w-full h-full object-cover"
-                        src={$data.logo}
-                        alt=""
-                      />
-                    </div>
-                    <div className="w-[87.73%] h-full bg-white rounded-xl shadow-[1px_0_4px_0_rgba(217,217,217,1)] border border-Gray/50">
-                      <h1 className="text-center leading-16 text-md font-semibold uppercase">
-                        {$data.name}
-                      </h1>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
+          <Product
+            title="Isi Pulsa"
+            product={pulsa}
+            handleNavigate={handleNavigate}
+          />
+
+          {/* Produk Pulsa */}
+          <Product
+            title="Voucher Game"
+            product={voucherGame}
+            handleNavigate={handleNavigate}
+          />
+
+          <Product
+            title="E - Wallet"
+            product={eWallet}
+            handleNavigate={handleNavigate}
+          />
+        </div>
+      </div>
+
+      <div className="relative flex items-center justify-between w-full lg:px-20 md:px-10 px-5">
+        <div className="border-t w-full h-16 border-Gray">
+          <p className="text-center leading-16 text-[12px] font-medium text-textGray ">
+            © 2025 M Iqbaluddin. All rights reserved.
+          </p>
         </div>
       </div>
     </>

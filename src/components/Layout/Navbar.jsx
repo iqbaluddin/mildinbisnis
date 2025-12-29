@@ -5,7 +5,7 @@ const Navbar = () => {
   const [navAktif, setNavAktif] = useState(false);
   return (
     <>
-      <div className="relative flex items-center justify-between w-full md:h-30 h-20 lg:px-20 mb-5 md:px-10 px-5">
+      <div className="relative flex items-center justify-between w-full md:h-30 h-20 lg:px-20 md:px-10 px-5 ">
         {/* Logo */}
         <div className="flex items-center md:space-x-4 space-x-1">
           <div className="md:w-16 md:h-16 w-11 h-11 rounded-full overflow-hidden">
