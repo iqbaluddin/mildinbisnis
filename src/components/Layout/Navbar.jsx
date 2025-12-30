@@ -1,13 +1,18 @@
 import { Icon } from "@iconify/react";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [navAktif, setNavAktif] = useState(false);
+  const navigate = useNavigate();
   return (
     <>
       <div className="relative flex items-center justify-between w-full md:h-30 h-20 lg:px-20 md:px-10 px-5 ">
         {/* Logo */}
-        <div className="flex items-center md:space-x-4 space-x-1">
+        <div
+          onClick={() => navigate("/")}
+          className="flex items-center md:space-x-4 space-x-1 cursor-pointer"
+        >
           <div className="md:w-16 md:h-16 w-11 h-11 rounded-full overflow-hidden">
             <img
               className="w-full h-full object-cover"

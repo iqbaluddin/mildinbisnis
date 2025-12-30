@@ -1,11 +1,12 @@
 import { Icon } from "@iconify/react";
 import Navbar from "../components/Layout/Navbar";
 import step from "../data/step";
-import pulsa from "../data/pulsa";
 import { useNavigate } from "react-router-dom";
 import Product from "../components/Layout/Product";
-import voucherGame from "../data/voucherGame";
-import eWallet from "../data/ewallet";
+import { pulsa } from "../data/pulsa";
+import { voucherGame } from "../data/voucherGame";
+import { eWallet } from "../data/ewallet";
+import Footer from "../components/Layout/Footer";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -17,11 +18,11 @@ const HomePage = () => {
     <>
       {/* Navbar */}
       <Navbar />
-      <div className="flex justify-center lg:mb-20 mb-10 ">
+      <div className="flex justify-center lg:mb-20 mb-10">
         <div className="lg:max-w-7xl md:w-full lg:mx-20 md:mx-10 mx-5 lg:space-y-12 space-y-8">
           {/* Step */}
           <div className="w-full space-y-3.5">
-            <h1 className="text-[20px] font-semibold">Step Pembelian</h1>
+            <h1 className="text-xl font-semibold">Step Pembelian</h1>
             <div className="flex flex-wrap justify-start gap-4">
               {step.map(($data, $key) => {
                 return (
@@ -79,13 +80,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="relative flex items-center justify-between w-full lg:px-20 md:px-10 px-5">
-        <div className="border-t w-full h-16 border-Gray">
-          <p className="text-center leading-16 text-[12px] font-medium text-textGray ">
-            © 2025 M Iqbaluddin. All rights reserved.
-          </p>
-        </div>
-      </div>
+      <Footer />
     </>
   );
 };

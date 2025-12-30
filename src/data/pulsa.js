@@ -1,4 +1,4 @@
-const pulsa = [
+export const pulsa = [
   {
     id: 1,
     name: "telkomsel",
@@ -30,5 +30,3 @@ const pulsa = [
     slug: "axis05",
   },
 ];
-
-export default pulsa;

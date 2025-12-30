@@ -1,4 +1,4 @@
-const eWallet = [
+export const eWallet = [
   {
     id: 1,
     name: "dana",
@@ -18,5 +18,3 @@ const eWallet = [
     slug: "shopeepay",
   },
 ];
-
-export default eWallet;

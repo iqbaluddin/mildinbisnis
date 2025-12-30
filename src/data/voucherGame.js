@@ -1,4 +1,4 @@
-const voucherGame = [
+export const voucherGame = [
   {
     id: 1,
     name: "mlbb",
@@ -18,5 +18,3 @@ const voucherGame = [
     slug: "pubg",
   },
 ];
-
-export default voucherGame;
