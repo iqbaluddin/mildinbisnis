@@ -7,7 +7,8 @@ const Navbar = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="relative flex items-center justify-between w-full md:h-30 h-20 lg:px-20 md:px-10 px-5 ">
+      <div className="relative flex items-center justify-between w-full md:h-30 h-20 lg:px-20 md:px-10 px-5 z-50 fix"></div>
+      <div className="fixed top-0 flex items-center justify-between w-full md:h-30 h-20 lg:px-20 md:px-10 px-5 z-50 fix bg-white">
         {/* Logo */}
         <div
           onClick={() => navigate("/")}
@@ -23,7 +24,7 @@ const Navbar = () => {
           <div className="-space-y-px">
             <h2 className="md:text-2xl text-md font-semibold">MILDIN BISNIS</h2>
             <p className="md:text-md text-[12px] font-medium text-textGray">
-              Bisnis Pulsa, Paket Data, & TopUp
+              Platform Transaksi Digital
             </p>
           </div>
         </div>

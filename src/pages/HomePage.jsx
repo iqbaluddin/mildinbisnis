@@ -7,6 +7,10 @@ import { pulsa } from "../data/pulsa";
 import { voucherGame } from "../data/voucherGame";
 import { eWallet } from "../data/ewallet";
 import Footer from "../components/Layout/Footer";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectCreative, FreeMode, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -20,8 +24,38 @@ const HomePage = () => {
       <Navbar />
       <div className="flex justify-center lg:mb-20 mb-10">
         <div className="lg:max-w-7xl md:w-full lg:mx-20 md:mx-10 mx-5 lg:space-y-12 space-y-8">
+          {/* Banner */}
+          <div className="relative rounded-xl overflow-hidden">
+            <Swiper
+              slidesPerView="auto"
+              spaceBetween={0}
+              loop={true}
+              pagination={{
+                dynamicBullets: true,
+              }}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              breakpoints={{
+                1440: {
+                  slidesPerView: 1.3,
+                  spaceBetween: 50,
+                },
+              }}
+              modules={[Autoplay, Pagination]}
+              className="mySwiper"
+            >
+              {[1, 2, 3].map((item) => (
+                <SwiperSlide key={item} className="rounded-xl overflow-hidden">
+                  <img src="images/banner.jpg" alt="" className="w-full" />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+
           {/* Step */}
-          <div className="w-full space-y-3.5">
+          <div className="w-full space-y-3.5 mt-4">
             <h1 className="text-xl font-semibold">Step Pembelian</h1>
             <div className="flex flex-wrap justify-start gap-4">
               {step.map(($data, $key) => {
